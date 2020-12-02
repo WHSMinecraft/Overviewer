@@ -2,7 +2,7 @@ texturepath = "./Resources/client.zip"
 outputdir = "./Render"
 
 
-folder = "~/Spigot/"
+folder = "./ms1632.gamedata.io/minecraftbukkit/"
 
 worlds["Overworld"] = folder + "world"
 worlds["Nether"] = folder + "world_nether"
