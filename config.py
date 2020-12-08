@@ -45,7 +45,6 @@ renders['netherhighways'] = {
 	"title": 'Highways',
 	'world': 'Nether',
 	"rendermode": [Base(), Depth(min=0, max=53), EdgeLines(), Nether(), SmoothLighting(strength=0.4)],
-	"northdirection": "lower-right",
         "defaultzoom": 8,
         "center": (-250, 50, 0)
 }
@@ -55,7 +54,6 @@ renders['netheritemines'] = {
 	"title": 'Netherite Minen',
 	'world': 'Nether',
 	"rendermode": [Base(), Depth(min=0, max=15), EdgeLines(), Nether(), SmoothLighting(strength=0.4)],
-	"northdirection": "lower-right",
         "defaultzoom": 8,
         "center": (-250, 50, 0)
 }
