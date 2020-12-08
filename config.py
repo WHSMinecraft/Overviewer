@@ -1,5 +1,9 @@
+from .observer import LoggingObserver
+
 texturepath = "./Resources/client.zip"
-outputdir = "./Render"
+outputdir = "./Render/"
+
+observer = LoggingObserver()
 
 
 folder = "./ms1632.gamedata.io/minecraftbukkit/"
