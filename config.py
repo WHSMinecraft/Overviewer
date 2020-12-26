@@ -1,7 +1,11 @@
+global json, getJSONText
+import json
 from .observer import LoggingObserver
 
 texturepath = "./Resources/client.zip"
 outputdir = "./Render/"
+
+customwebassets = "./WebAssets"
 
 observer = LoggingObserver()
 
@@ -13,10 +17,22 @@ worlds["Nether"] = folder + "world_nether"
 worlds["End"] = folder + "world_the_end"
 
 
+
+def getJSONText(jsonText):
+    return json.loads(jsonText)['text']
+
 def markerFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
         if "MARKER" == poi['Text1']:
             return " ".join([poi['Text2'], poi['Text3'], poi['Text4']])
+    elif poi['id'] == 'Lectern' or poi['id'] == 'minecraft:lectern':
+        if 'Book' in poi and poi['Book']['id'] == 'minecraft:written_book':
+            nbt = poi['Book']['tag']
+            if nbt['title'] == 'OVERVIEWER':
+                poi['icon'] = "book_icon.png"
+                title = getJSONText(nbt['pages'][0])  # First page
+                pages = map(getJSONText, nbt['pages'][1:])  # Rest of pages
+                return (title, " ".join(pages))
 
 markers = [dict(name="Marker", filterFunction=markerFilter, icon="signpost_icon.png", showIconInLegend=True)]
 
