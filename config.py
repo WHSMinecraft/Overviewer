@@ -13,6 +13,13 @@ worlds["Nether"] = folder + "world_nether"
 worlds["End"] = folder + "world_the_end"
 
 
+def markerFilter(poi):
+    if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
+        if "MARKER" == poi['Text1']:
+            return " ".join([poi['Text2'], poi['Text3'], poi['Text4']])
+
+markers = [dict(name="Marker", filterFunction=markerFilter, icon="signpost_icon.png", showIconInLegend=True)]
+
 radius = 50000
 
 renders["overworldday"] = {
@@ -22,19 +29,21 @@ renders["overworldday"] = {
 	"crop": (-radius, -radius, radius, radius),
 	"center": (-600, 80, -180),
 	"showspawn": False,
-        "defaultzoom": 5
+        "defaultzoom": 5,
+        "markers": markers
 }
 
-"""
+
 renders["overworldnight"] = {
 	"title": "Welt in der Nacht",
 	"world": "Overworld",
 	"rendermode": [Base(), EdgeLines(), SmoothLighting(night=True, strength=0.7)],
-	"crop": border,
-	"center": center,
-	"showspawn": False
+	"crop": (-radius, -radius, radius, radius),
+	"center": (-600, 80, -180),
+	"showspawn": False,
+        "defaultzoom": 5,
+        "markers": markers
 }
-"""
 
 """
 renders['overworldcaves'] = {
@@ -50,7 +59,8 @@ renders['netherhighways'] = {
 	'world': 'Nether',
 	"rendermode": [Base(), Depth(min=0, max=53), EdgeLines(), Nether(), SmoothLighting(strength=0.4)],
         "defaultzoom": 8,
-        "center": (-250, 50, 0)
+        "center": (-250, 50, 0),
+        "markers": markers
 }
 
 
@@ -59,7 +69,8 @@ renders['netheritemines'] = {
 	'world': 'Nether',
 	"rendermode": [Base(), Depth(min=0, max=15), EdgeLines(), Nether(), SmoothLighting(strength=0.4)],
         "defaultzoom": 8,
-        "center": (-250, 50, 0)
+        "center": (-250, 50, 0),
+        "markers": markers
 }
 
 renders['end'] = {
@@ -67,7 +78,8 @@ renders['end'] = {
 	'world': 'End',
 	"rendermode": [Base(), EdgeLines(), SmoothLighting(strength=0.3)],
         "defaultzoom": 8,
-        "center": (0, 80, 0)
+        "center": (0, 80, 0),
+        "markers": markers
 }
 
 """
