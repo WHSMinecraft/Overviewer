@@ -54,6 +54,15 @@ renders['overworldcaves'] = {
 }
 """
 
+renders['netherceiling'] = {
+	"title": 'Über Bedrock',
+	'world': 'Nether',
+	"rendermode": [Base(), EdgeLines(), SmoothLighting(strength=0.4)],
+        "defaultzoom": 8,
+        "center": (-250, 50, 0),
+        "markers": markers
+}
+
 renders['netherhighways'] = {
 	"title": 'Highways',
 	'world': 'Nether',
