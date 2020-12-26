@@ -6,7 +6,7 @@ outputdir = "./Render/"
 observer = LoggingObserver()
 
 
-folder = "./ms1632.gamedata.io/minecraftbukkit/"
+folder = "~/MinecraftServer/"
 
 worlds["Overworld"] = folder + "world"
 worlds["Nether"] = folder + "world_nether"
