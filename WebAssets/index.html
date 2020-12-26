@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{title}</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="Minecraft-Overviewer {version}" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+	<script type="text/javascript" src="overviewerConfig.js"></script>
+	<script type="text/javascript" src="overviewer.js"></script>
+	<script type="text/javascript" src="baseMarkers.js"></script>
+
+	<link rel="stylesheet" href="leaflet.css" />
+	<script src="leaflet.js"></script>
+	<link rel="stylesheet" href="overviewer.css" type="text/css" />
+</head>
+<!-- Generated at: {time} -->
+<body onload="overviewer.util.initialize()">
+    <noscript style="color:white; background-color:black">
+        If you can see this message, there is likely a problem loading the Overviewer JavaScript components.
+        Check the JavaScript console for error messages.
+    </noscript>
+    <div id="mcmap"></div>
+    <div style="position: absolute; bottom: 0; width: 100%; text-align: center; z-index: 1000;">
+	    <div id="timestamp" style="display: inline-block; background: rgba(255, 255, 255, 0.7); padding: 0 5px; color: #333; font-size: 11px;">
+		    Letztes Update: {time}
+	    </div>
+    </div>
+	<script>
+		const date = new Date('{time}'.replace('CET', ''));
+		const ts = document.getElementById('timestamp');
+		ts.innerText = 'Letztes Update: ' + date.toLocaleString('de');
+	</script>
+</body>
+</html>
