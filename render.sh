@@ -15,6 +15,12 @@ echo --------------------------------------------------
 ./Minecraft-Overviewer/overviewer.py --config=config.py --genpoi --skip-players
 
 echo --------------------------------------------------
+echo Rendering claims...
+echo --------------------------------------------------
+
+./render_claims.py
+
+echo --------------------------------------------------
 echo Copying files to web server...
 echo --------------------------------------------------
 
