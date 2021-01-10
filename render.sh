@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 cd "${0%/*}"
 
 echo --------------------------------------------------
@@ -24,7 +26,7 @@ echo --------------------------------------------------
 echo Copying files to web server...
 echo --------------------------------------------------
 
-rsync -ah --delete ./Render/ ~/WebServerRoot/map
+rsync -rlh --delete ./Render/ /srv/http/whsminecraft.de/map
 
 echo --------------------------------------------------
 echo Done!
