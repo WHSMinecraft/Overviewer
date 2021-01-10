@@ -7,7 +7,7 @@ import json
 import requests
 
 
-claimdata = os.path.expanduser("~/MinecraftServer/plugins/GriefPreventionData/ClaimData/")
+claimdata = os.path.expanduser("/srv/minecraft/survival/plugins/GriefPreventionData/ClaimData/")
 
 regionfile = os.path.expanduser("./Render/regions.js")
 

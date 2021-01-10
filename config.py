@@ -2,6 +2,7 @@ global json, getJSONText
 import json
 from .observer import LoggingObserver
 
+
 texturepath = "./Resources/client.zip"
 outputdir = "./Render/"
 
@@ -10,7 +11,7 @@ customwebassets = "./WebAssets"
 observer = LoggingObserver()
 
 
-folder = "~/MinecraftServer/"
+folder = "/srv/minecraft/survival/"
 
 worlds["Overworld"] = folder + "world"
 worlds["Nether"] = folder + "world_nether"
