@@ -60,7 +60,8 @@ for f in glob.glob(claimdata + '*.yml'):
         hovertext = ''
 
         if (admin):
-            hovertext  = '[ADMIN]'
+            owner = '[ADMIN]'
+            hovertext  = owner
         elif not subclaim:
             owner = getPlayerName(uuid)
             hovertext = '<div><img src="https://crafatar.com/avatars/' + uuid + '?size=16&overlay=true" /> ' + owner + '</div>'
