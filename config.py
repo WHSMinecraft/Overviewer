@@ -57,7 +57,7 @@ renders["overworldday"] = {
 }
 
 # ==================== Nether =====================
-radius = 1500
+radius = 3500
 center = (0, 80, 0)
 crop = (center[0]-radius, center[2]-radius, center[0]+radius, center[2]+radius)
 
