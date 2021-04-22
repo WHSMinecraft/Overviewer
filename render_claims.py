@@ -70,8 +70,9 @@ for f in glob.glob(claimdata + '*.yml'):
             owner = getPlayerName(uuid)
             hovertext = '<div><img src="https://crafatar.com/avatars/' + uuid + '?size=16&overlay=true" /> ' + owner + '</div>'
 
+        sea_level = 70 if dimension == "world" else 0
         # y_level = max(lbc[1], gbc[1])
-        y_level = 70
+        y_level = max(sea_level, 5 + min(lbc[1], gbc[1]))
 
         data = dict(
             hovertext=hovertext,
