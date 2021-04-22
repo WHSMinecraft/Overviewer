@@ -36,7 +36,14 @@ def markerFilter(poi):
                 return (title, " ".join(pages))
 
 
-markers = [dict(name="Marker", filterFunction=markerFilter, icon="signpost_icon.png", showIconInLegend=True)]
+def cameraFilter(poi):
+    if poi['id'] == 'camera':
+            return "Fotos"
+
+markers = [
+        dict(name="Marker", filterFunction=markerFilter, icon="signpost_icon.png", showIconInLegend=True)
+#        dict(name="Fotos", filterFunction=cameraFilter, icon="camera_icon.png", showIconInLegend=True)
+]
 
 
 # ==================== Overworld =====================
@@ -53,6 +60,20 @@ renders["overworldday"] = {
 	"showspawn": False,
         "defaultzoom": 5,
         "maxzoom": -1,
+        "manualpois": [
+            {
+                "id": "camera",
+                "x": -384,
+                "y": 70,
+                "z": -205
+            },
+            {
+                "id": "camera",
+                "x": -235,
+                "y": 90,
+                "z": -280
+            }
+        ],
         "markers": markers
 }
 
