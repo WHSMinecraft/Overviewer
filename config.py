@@ -24,7 +24,7 @@ def getJSONText(jsonText):
 
 def markerFilter(poi):
     if poi['id'] == 'Sign' or poi['id'] == 'minecraft:sign':
-        if "MARKER" == poi['Text1']:
+        if "OVERVIEWER" == poi['Text1']:
             return " ".join([poi['Text2'], poi['Text3'], poi['Text4']])
     elif poi['id'] == 'Lectern' or poi['id'] == 'minecraft:lectern':
         if 'Book' in poi and poi['Book']['id'] == 'minecraft:written_book':
