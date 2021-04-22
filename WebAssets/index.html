@@ -34,7 +34,7 @@
 	    <option value='{"x":9741,"z":919}'>Gelsenkirchen</option>
     </select>
 	<script>
-		const date = new Date('{time}'.replace('CET', ''));
+		const date = new Date('{time}'.replace(/CES?T/, ''));
 		const ts = document.getElementById('timestamp');
 		ts.innerText = 'Letztes Update: ' + date.toLocaleString('de');
 
