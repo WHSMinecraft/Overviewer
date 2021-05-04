@@ -41,7 +41,7 @@ markers = [dict(name="Marker", filterFunction=markerFilter, icon="signpost_icon.
 
 # ==================== Overworld =====================
 center = (0, 80, 0)
-# radius = 50000
+radius = 1000000
 crop = (center[0]-radius, center[2]-radius, center[0]+radius, center[2]+radius)
 
 renders["overworldday"] = {
