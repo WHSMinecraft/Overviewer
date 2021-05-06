@@ -1,0 +1,8 @@
+Install:
+build-essential
+python3-numpy
+python3-pil
+python3-dev
+
+
+./setup.sh
