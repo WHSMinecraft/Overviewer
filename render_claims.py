@@ -39,7 +39,7 @@ output = {
 
 
 center = (-335, 80, -195)
-radius = 50000
+radius = 1000000
 crop = (center[0]-radius, center[2]-radius, center[0]+radius, center[2]+radius)
 
 
