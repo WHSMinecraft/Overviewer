@@ -18,8 +18,14 @@ def getPlayerName(uuid):
     if uuid in playercache:
         return playercache[uuid]
 
-    request = requests.get("https://api.mojang.com/user/profiles/%s/names" % uuid).json()
-    currentname = request[-1].get('name')
+    request = requests.get("https://api.mojang.com/user/profiles/%s/names" % uuid)
+    currentname = ""
+    if request.status_code != 200:
+        currentname = "[Unbekannt]"
+    else:
+        names = request.json()
+        currentname = names[-1].get('name')
+
     playercache[uuid] = currentname
     return currentname
 
