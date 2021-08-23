@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# git clone git://github.com/overviewer/Minecraft-Overviewer.git
-git clone https://github.com/IncredibleHolg/Minecraft-Overviewer.git
+git clone git://github.com/overviewer/Minecraft-Overviewer.git
 
 
 pushd Minecraft-Overviewer
-git checkout quartz_bricks
 python3 setup.py build
 popd
 
@@ -13,5 +11,5 @@ popd
 mkdir Render
 mkdir Resources
 
-VERSION=1.16.4
+VERSION=1.17.1
 wget https://overviewer.org/textures/${VERSION} -O Resources/client.zip
