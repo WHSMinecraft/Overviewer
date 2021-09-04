@@ -1,8 +1,13 @@
-Install:
-build-essential
-python3-numpy
-python3-pil
-python3-dev
+## Install
+
+Ubuntu			Arch
+----------------------------------------------------
+build-essential		base-devel
+python3-numpy		python3-numpy
+python3-pillow		python3-pillow
+python3-dev		(included in python package)
 
 
-./setup.sh
+## Run
+
+$ ./setup.sh
