@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 git clone git://github.com/overviewer/Minecraft-Overviewer.git
 
 
