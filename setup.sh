@@ -2,7 +2,7 @@
 
 set -e
 
-git clone git://github.com/overviewer/Minecraft-Overviewer.git
+git clone ssh://git@github.com/overviewer/Minecraft-Overviewer.git
 
 
 pushd Minecraft-Overviewer
