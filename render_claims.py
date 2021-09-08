@@ -42,6 +42,11 @@ center = (-335, 80, -195)
 radius = 1000000
 crop = (center[0]-radius, center[2]-radius, center[0]+radius, center[2]+radius)
 
+template = "{player:20} | {x:6} | {z:6} | {dim:15} | {world:20} "
+
+print(template.format(player="Playername", x="     X", z="     Z", dim="Dimensions", world="World"))
+print("-----------------------------------------------------------------------------")
+
 
 for f in glob.glob(claimdata + '*.yml'):
     with open(f) as c:
@@ -80,6 +85,10 @@ for f in glob.glob(claimdata + '*.yml'):
         # y_level = max(lbc[1], gbc[1])
         y_level = max(sea_level, 5 + min(lbc[1], gbc[1]))
 
+        x_len = gbc[0] - lbc[0]
+        z_len = gbc[2] - lbc[2]
+        size = x_len * z_len
+
         data = dict(
             hovertext=hovertext,
             strokeColor='#00b3ff' if admin else '#ff7800',
@@ -95,7 +104,7 @@ for f in glob.glob(claimdata + '*.yml'):
         )
 
         output[dimension].append(data)
-        print("Added claim for {} at: \tx = {}\tz = {}\t in {}".format(owner, lbc[0], lbc[2], dimension))
+        print(template.format(player=owner, x=lbc[0], z=lbc[2], dim="{}x{}".format(x_len, z_len), world=dimension))
 
 
 
