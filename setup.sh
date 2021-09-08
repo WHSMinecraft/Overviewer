@@ -12,6 +12,7 @@ popd
 
 mkdir Render
 mkdir Resources
+mkdir World
 
 VERSION=1.17.1
 wget https://overviewer.org/textures/${VERSION} -O Resources/client.zip

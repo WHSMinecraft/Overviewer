@@ -4,14 +4,19 @@ set -e
 
 cd "${0%/*}"
 
+
+
+echo --------------------------------------------------
+echo Syncing world...
+echo --------------------------------------------------
+
+rsync -rlh --delete /srv/minecraft/survival/world* ./World
+
 echo --------------------------------------------------
 echo Rendering tiles...
 echo --------------------------------------------------
 
-echo "save-all" > /run/minecraft-survival.stdin
-echo "save-off" > /run/minecraft-survival.stdin
 ./Minecraft-Overviewer/overviewer.py --config=config.py
-echo "save-on" > /run/minecraft-survival.stdin
 
 echo --------------------------------------------------
 echo Rendering markers...

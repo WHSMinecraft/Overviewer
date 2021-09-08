@@ -11,7 +11,7 @@ customwebassets = "./WebAssets"
 observer = LoggingObserver()
 
 
-folder = "/srv/minecraft/survival/"
+folder = "./World/"
 
 worlds["Overworld"] = folder + "world"
 worlds["Nether"] = folder + "world_nether"
