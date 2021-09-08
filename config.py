@@ -45,15 +45,23 @@ radius = 1000000
 crop = (center[0]-radius, center[2]-radius, center[0]+radius, center[2]+radius)
 
 renders["overworldday"] = {
-	"title": "Tag",
-	"world": "Overworld",
-	"rendermode": smooth_lighting,
-	"crop": crop,
-	"center": center,
-	"showspawn": False,
-        "defaultzoom": 5,
-        "maxzoom": -1,
-        "markers": markers
+    "title": "Tag",
+    "world": "Overworld",
+    "rendermode": smooth_lighting,
+    "crop": crop,
+    "center": center,
+    "showspawn": False,
+    "defaultzoom": 5,
+    "maxzoom": -1,
+    "markers": markers
+}
+
+renders["overworlddry_overlay"] = {
+    "title": "Trocken",
+    "world": "Overworld",
+    "rendermode": [Base(), EdgeLines(), NoFluids()],
+    "crop": crop,
+    "overlay": ['overworldday']
 }
 
 # ==================== Nether =====================
